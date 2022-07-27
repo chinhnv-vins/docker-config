@@ -3,7 +3,7 @@ services:
     web:
         image: nginx:latest
         ports:
-            - "80:80"
+            - "8000:80"
         volumes:
             - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
             - ./app:/app
@@ -24,12 +24,12 @@ services:
         volumes:
             - mysqldata:/var/lib/mysql
         ports:
-            - 3306:3306
+            - 33062:3306
     phpmyadmin:
       image: phpmyadmin
       restart: always
       ports:
-        - 8080:80
+        - 8001:80
       environment:
         - PMA_ARBITRARY=1
 volumes:
